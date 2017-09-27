@@ -1,7 +1,6 @@
 # RPI Alertmanager
 
-* Master : [![Circle CI](https://circleci.com/gh/zeiot/rpi-alertmanager/tree/master.svg?style=svg)](https://circleci.com/gh/zeiot/rpi-alertmanager/tree/master)
-* Develop : [![Circle CI](https://circleci.com/gh/zeiot/rpi-alertmanager/tree/develop.svg?style=svg)](https://circleci.com/gh/zeiot/rpi-alertmanager/tree/develop)
+* Master : [![coverage report](https://gitlab.com/zeiot/rpi-alertmanager/badges/master/coverage.svg)](https://gitlab.com/zeiot/rpi-alertmanager/commits/master)
 
 Docker image of [Alertmanager][] to use on a [Raspberry PI][].
 
