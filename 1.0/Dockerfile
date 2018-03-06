@@ -1,11 +1,11 @@
-# VERSION 0.9.1
+# VERSION 0.14.0
 # AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
 # DESCRIPTION:    zeiot/rpi-alertmanager
 
 FROM resin/armv7hf-debian:stretch
 MAINTAINER Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
-ENV ALERTMANAGER_VERSION 0.9.1
+ENV ALERTMANAGER_VERSION 0.14.0
 
 ADD https://github.com/prometheus/alertmanager/releases/download/v${ALERTMANAGER_VERSION}/alertmanager-${ALERTMANAGER_VERSION}.linux-armv7.tar.gz /alertmanager.tar.gz
 
