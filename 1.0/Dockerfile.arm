@@ -1,0 +1,51 @@
+# Copyright (C) 2016-2018 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# VERSION 0.14.0
+# AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# DESCRIPTION:    zeiot/rpi-alertmanager
+
+FROM resin/armv7hf-debian:stretch
+
+LABEL summary="Alertmanager for ARM" \
+      description="Alert Manager for ARM devices" \
+      name="zeiot/rpi-alertmanager" \
+      url="https://github.com/zeiot/rpi-alertmanager" \
+      maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
+
+ENV ALERTMANAGER_VERSION 0.14.0
+
+RUN [ "cross-build-start" ]
+
+ADD https://github.com/prometheus/alertmanager/releases/download/v${ALERTMANAGER_VERSION}/alertmanager-${ALERTMANAGER_VERSION}.linux-armv7.tar.gz /alertmanager.tar.gz
+
+RUN tar -xf /alertmanager.tar.gz \
+    && rm /alertmanager.tar.gz \
+    && mv alertmanager-${ALERTMANAGER_VERSION}.linux-armv7 /usr/share/alertmanager \
+    && cp /usr/share/alertmanager/alertmanager /usr/bin/alertmanager \
+    && mkdir /etc/alertmanager \
+    && cp /usr/share/alertmanager/simple.yml /etc/alertmanager/simple.yml
+
+RUN [ "cross-build-end" ]
+
+EXPOSE     9093
+
+USER       nobody
+
+VOLUME     [ "/alertmanager" ]
+
+ENTRYPOINT [ "/usr/bin/alertmanager" ]
+
+CMD        [ "-config.file=/etc/alertmanager/simple.yml", \
+             "-storage.path=/alertmanager" ]
