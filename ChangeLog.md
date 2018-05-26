@@ -1,6 +1,11 @@
 RPI AlertManager ChangeLog
 =================================
 
+# Version 1.0.0 (26/05/2018)
+
+- Support for multi arch ARM and ARM64
+- Update to Alertmanager 0.14.0
+
 # Version 0.3.0 (09/29/2017)
 
 - Update to Alertmanager 0.9.1
