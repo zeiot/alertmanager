@@ -1,6 +1,10 @@
 ARM AlertManager ChangeLog
 =================================
 
+# Version 1.3.0 (02/25/2019)
+
+- Refactoring GitlabCI stages
+
 # Version 1.2.0 (02/25/2019)
 
 - Migrate to Balenalib Alpine as the Docker base image
