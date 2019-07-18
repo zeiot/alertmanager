@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# VERSION 0.16.1
+# VERSION 0.18.0
 # AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
 # DESCRIPTION:    zeiot/rpi-alertmanager
 
@@ -26,7 +26,7 @@ LABEL summary="Alertmanager for ARM" \
       url="https://github.com/zeiot/alertmanager" \
       maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
 
-ENV ALERTMANAGER_VERSION 0.16.1
+ENV ALERTMANAGER_VERSION 0.18.0
 
 RUN [ "cross-build-start" ]
 
