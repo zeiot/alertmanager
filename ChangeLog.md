@@ -1,6 +1,10 @@
 ARM AlertManager ChangeLog
 =================================
 
+# Version 1.4.0 (07/18/2019)
+
+- Update to Alertmanager 0.1.8.0
+
 # Version 1.3.0 (02/25/2019)
 
 - Refactoring GitlabCI stages
